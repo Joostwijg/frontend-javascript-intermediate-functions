@@ -14,6 +14,15 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan bijhouden?
 // Log het antwoord in de terminal.
 
+let cumLaudeStudents = 0;
+
+for ( let i = 0; i < grades.length; i++){
+    if (grades[i] >= 8){
+        cumLaudeStudents++;
+    }
+}
+
+
 // ---- Verwachte uitkomst: 6
 
 
@@ -27,7 +36,20 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
+function cumLaude (grades){
+    let cumLaudeStudents = 0;
 
+    for (let i = 0; i < grades.length; i++){
+        if(grades[i] >= 8){
+            cumLaudeStudents++
+        }
+    }
+    return(cumLaudeStudents)
+}
+
+console.log(cumLaudeStudents)
+console.log(cumLaude([6, 4, 5]))
+console.log(cumLaude([8, 9, 4, 6, 10]))
 
 
 /* Opdracht  2: Gemiddeld cijfer */
@@ -42,6 +64,18 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 
 // ---- Verwachte uitkomst: 6.642857142857143
 
+function averageFigure(){
+    let average = 0;
+
+    for (let i = 0; i <grades.length; i++){
+        average += grades [i];
+    }
+
+    return average / grades.length;
+
+}
+
+console.log(averageFigure())
 
 /* 2b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
@@ -52,6 +86,22 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // averageGrade(grades) geeft 6.642857142857143
 // averageGrade([6, 4, 5]) geeft 5
 // averageGrade([8, 9, 4, 6, 10]) geeft 7.4
+
+function averageGrade (grades){
+    let average = 0;
+
+    for (let i = 0; i < grades.length; i++){
+        average += grades[i];
+    }
+
+    return (average / grades.length).toFixed(2);
+    // return parseFloat ((average / grades.length).toFixed(2));
+
+}
+
+console.log(averageGrade(grades))
+console.log(averageGrade([6, 4, 5]))
+console.log(averageGrade([8, 9, 4, 6, 10]))
 
 
 /* 2c: Afronden op twee decimalen */
